@@ -1,19 +1,13 @@
-from dataset import ds
+from dataset import allFramesFiltered as ds
 import matplotlib.pyplot as plt
 
-x = ds['Low']
-y = ds['High']
+x = ds.head['Year']
+y = ds.head['Avg']
 
-plt.plot(x, y, label = str(ds['stock']))
+plt.plot(x, y)
 
-# for line in ds.head():
-#     x = line['Low']
-#     y = line['High']
-#
-#     plt.plot(x, y, label = str(line['stock']))
-
-plt.xlabel('Date Label')
-plt.ylabel('High Label')
+plt.xlabel('Year')
+plt.ylabel('Average Adjustment Close Price')
 plt.title('Stock market graph')
 plt.legend()
 plt.show()
